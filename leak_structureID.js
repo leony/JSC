@@ -63,15 +63,4 @@ print(func_str.charCodeAt(9));
     0x100c99005 <+37>: mov    rax, qword ptr [rax + 0x58] // fake_unlinked_function_executable
     0x100c99009 <+41>: mov    rbx, qword ptr [rax + 0x48] // func_string_pointer, rbx= fake_obj
     0x100c9900d <+45>: test   rbx, rbx
-    0x100c99010 <+48>: je     0x100c99015               ; <+53>
-    0x100c99012 <+50>: add    dword ptr [rbx], 0x2 		  // jscell_of_fake_obj + 2
-    0x100c99015 <+53>: lea    rax, [rip + 0x52ff0c]     ; JSC::Symbols::starDefaultPrivateName
-    0x100c9901c <+60>: mov    ecx, dword ptr [rax] // ecx=3
-    .....
-    0x100c99064 <+132>: add    dword ptr [rax], 0x2 	// rax = fake_obj, rax= 0x0002190000000004
-    0x100c99067 <+135>: mov    eax, dword ptr [rbx] 	// eax = 4
-    0x100c99069 <+137>: add    eax, -0x2 				// eax = 2
-    0x100c9906c <+140>: je     0x100c99072               ; <+146>
-    0x100c9906e <+142>: mov    dword ptr [rbx], eax
-    0x100c99070 <+144>: jmp    0x100c9907a               ; <+154>
 */
