@@ -60,7 +60,7 @@ print(func_str.charCodeAt(9));
     0x100c98fee <+14>: cmp    byte ptr [rax + 0x5], 0x7 // type of fake_function_executable
     0x100c98ff2 <+18>: jne    0x100c99005               ; <+37>
     .....
-    0x100c99005 <+37>: mov    rax, qword ptr [rax + 0x58] // fake_unlinked_function_executable
-    0x100c99009 <+41>: mov    rbx, qword ptr [rax + 0x48] // func_string_pointer, rbx= fake_obj
+    0x100c99005 <+37>: mov    rax, qword ptr [rax + 0x58] // rax = fake_unlinked_function_executable
+    0x100c99009 <+41>: mov    rbx, qword ptr [rax + 0x48] // rbx = func_string_pointer
     0x100c9900d <+45>: test   rbx, rbx
 */
